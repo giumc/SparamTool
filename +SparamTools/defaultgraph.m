@@ -14,15 +14,14 @@ set(groot,'defaultFigurePaperOrientation','landscape');
 
 %set(groot,'defaultFigurePosition',[ 1924         313         769         682 ] );
 % clear Pix_SS Init
-set(groot,'defaultAxesFontSize', 22); 
+set(groot,'defaultAxesFontSize', 16); 
 set(groot,'defaultAxesFontName',fontname);
 set(groot,'defaultAxesFontWeight','normal');
 %set(groot,'defaultAxesPosition',[0.1 0.15 0.8 0.75]);
-set(groot,'defaultAxesTickDir','in');
 
-set(groot,'defaultAxesXMinorTick','off');
-set(groot,'defaultAxesYMinorTick','off');
-set(groot,'defaultAxesTickLabelInterpreter','tex');
+% set(groot,'defaultAxesXMinorTick','off');
+% set(groot,'defaultAxesYMinorTick','off');
+% set(groot,'defaultAxesTickLabelInterpreter','tex');
 set(groot,'defaultAxesGridLineStyle','-');
 set(groot,'defaultAxesGridAlpha',1);
 set(groot,'defaultAxesGridColor',rgb('Gainsboro'));
@@ -30,18 +29,18 @@ set(groot,'defaultAxesGridColor',rgb('Gainsboro'));
 % set(groot,'defaultAxesYGrid','on');
 set(groot,'defaultAxesColor','none');
 set(groot,'defaultAxesLineWidth',1.75);
-set(groot,'defaultAxesTickDirMode','manual');
+% set(groot,'defaultAxesTickDirMode','manual');
 set(groot,'defaultAxesTickDir','both');
-set(groot,'defaultAxesTickLength',[3,1]);
+% set(groot,'defaultAxesTickLength',[0.3,0.1]);
 set(groot,'defaultAxesPlotBoxAspectRatioMode','manual');
 set(groot,'defaultAxesPlotBoxAspectRatio',[2,1,1]);
-set(groot,'defaultLineLinewidth', 3)
+set(groot,'defaultLineLinewidth', 2)
 set(groot,'defaultAxesBox','off');
 set(groot,'defaultAxesXGrid','on');
 set(groot,'defaultAxesYGrid','on');
 set(groot,'defaultAxesGridAlpha',0.3);
 set(groot,'defaultAxesGridColor',rgb('Grey'));
-set(groot,'defaultAxesTickLength',[0.006,0.08]);
+% set(groot,'defaultAxesTickLength',[0.06,0.08]);
 %set(groot,'defaultAxesXAxis','Frequency [MHz]');
 %set(groot,'defaultAxesYAxis','S [dB]');
 % set(groot,'defaultAxesXLabel','Frequency [MHz]');

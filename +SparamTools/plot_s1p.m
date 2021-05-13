@@ -51,6 +51,7 @@ function plot_s1p(a,f,varargin)
         end
         
     else
+            var={};
         
             [~,lab]=GraphicTools.scale(f);
             
