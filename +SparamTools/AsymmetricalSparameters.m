@@ -1,4 +1,4 @@
-classdef AsymmetricalSparameters < sparameters 
+classdef AsymmetricalSparameters < labeledsparam
    
     properties
         
@@ -14,10 +14,12 @@ classdef AsymmetricalSparameters < sparameters
     
     methods 
 
-        function obj=AsymmetricalSparameters(data,f,z1,z2)
+        function obj=AsymmetricalSparameters(name,data,f,z1,z2)
             
-            obj@sparameters(data,f);
+
             
+            obj@labeledsparam(name,data,f);
+
             obj.Impedance_1=z1;
             obj.Impedance_2=z2;
             
@@ -31,7 +33,7 @@ classdef AsymmetricalSparameters < sparameters
     
     methods (Access=protected)
 
-        function sparam_data_out=shiftimpedance(obj)
+        function sparam=shiftimpedance(obj)
 
             zparam_in=zparameters(obj);
     
@@ -44,15 +46,17 @@ classdef AsymmetricalSparameters < sparameters
 
             f=zparam_in.Frequencies;
     
-            sparam_data_out=ones(2,2,length(f));
+            sparam=ones(2,2,length(f));
             
             for i=1:length(f)
 
                zm=zparam_in.Parameters(:,:,i);
 
-               sparam_data_out(:,:,i)=F*(zm-Zref)*inv(zm+Zref)*inv(F);
+               sparam(:,:,i)=F*(zm-Zref)*inv(zm+Zref)*inv(F);
 
             end
+            
+            sparam=labeledsparam(obj.name,sparam,f);
         
         end
         

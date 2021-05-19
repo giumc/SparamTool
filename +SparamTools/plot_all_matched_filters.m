@@ -24,20 +24,20 @@ function plot_all_matched_filters(p)
     
     colors=inferno(length(mod_sp)+2);
     
+    t=GraphicTools.add_fig_title();
+    
     for i=1:length(mod_sp)
         
-        line(ax,...
-            GraphicTools.scale(sp(i).Frequencies),...
-            SparamTools.dbmag(squeeze(mod_sp(i).mod_param(2,1,:))),...
-            'DisplayName',...
-            string(i),'Color',colors(i,:));
-    
-            l=legend(ax);
-            l.Visible='on';
-
-        pause
-        ax.NextPlot='replace';
+        SparamTools.plot_snp(mod_sp(i).mod_param);
         
+        t.String=sprintf("%s : %.2f Ohm , %.2f Ohm",...
+            strrep(mod_sp(i).name,".s2p",""),...
+            mod_sp(i).Impedance_1,...
+            mod_sp(i).Impedance_2);
+            
+        pause
+        hold off
+       
     end
     
 end

@@ -15,7 +15,7 @@ function plot_snp(sparam,varargin)
     
     error_msg="plot_snp(sparam) needs sparameters object or path to sparameter";
 
-
+    SparamTools.defaultgraph;
 
     if (ischar(sparam)||isstring(sparam))
 

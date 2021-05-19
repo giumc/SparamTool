@@ -12,7 +12,7 @@ function sp=get_all_sp_in_folder(p)
     
     for i=1:length(files)
         
-        sp(i)=sparameters(files(i).name);
+        sp(i)=labeledsparam(files(i).name);
         
     end
     

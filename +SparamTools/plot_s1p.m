@@ -28,7 +28,7 @@ function plot_s1p(a,f,varargin)
 
         end
         
-        pos_phase=check_if_string_is_present(varargin,'phaseplot');
+        pos_phase=check_if_string_is_present(varargin{:},'phaseplot');
         
         if pos_phase
             
@@ -36,7 +36,7 @@ function plot_s1p(a,f,varargin)
             
         end
         
-        pos_impedance=check_if_string_is_present(varargin,'reference');
+        pos_impedance=check_if_string_is_present(varargin{:},'reference');
         
         if pos_impedance
             

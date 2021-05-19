@@ -18,9 +18,7 @@ function new_sp=match_filter(sp)
     s21db=SparamTools.dbmag(s21);
     
     [~,imax]=max(s21db);
-    
-    fmax=sp.Frequencies(imax);
-    
+
     m=s2abcd(sp.Parameters);
     
     m_max=m(:,:,imax);
@@ -34,6 +32,15 @@ function new_sp=match_filter(sp)
     
     zi2=real(sqrt(d*b)/sqrt(c*a));
     
-    new_sp=SparamTools.AsymmetricalSparameters(sp.Parameters,sp.Frequencies,zi1,zi2);
+    if isa(sp,'labeledsparam')
+        
+        
+        new_sp=SparamTools.AsymmetricalSparameters(sp.name,sp.Parameters,sp.Frequencies,zi1,zi1);
+    
+    else
+        
+        new_sp=SparamTools.AsymmetricalSparameters("none",sp.Parameters,sp.Frequencies,zi1,zi1);
+        
+    end
     
 end
