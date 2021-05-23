@@ -26,13 +26,22 @@ function datamerge(basepath,varargin)
         subfiles=subfiles([contains({subfiles.name},tag)]);
         
     end
-
-    for i=1:length(subfiles)
-
-        modname=strcat(strrep(strrep(subfiles(i).folder,basepath,""),'\','_'),"_",subfiles(i).name);
-        copyfile(strcat(subfiles(i).folder,filesep,subfiles(i).name),...
-                strcat(basepath,filesep,modname));
+    
+   if SparamTools.makefolder(basepath,['Merged',tag])
         
-    end
+
+       for i=1:length(subfiles)
+
+            modname=strcat(strrep(strrep(subfiles(i).folder,basepath,""),'\','_'),"_",subfiles(i).name);
+            copyfile(strcat(subfiles(i).folder,filesep,subfiles(i).name),...
+                    strcat([basepath,filesep,'Merged',tag],filesep,modname));
+
+       end
+        
+   else
+       
+       error ("Failed to create new folder");
+       
+   end
     
 end
