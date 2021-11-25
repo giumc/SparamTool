@@ -27,6 +27,23 @@ classdef labeledsparam < sparameters
         
     end
     
+    methods
+
+        function x=get_params(obj,i,j)
+            
+            x=obj.Parameters(i,j,:);
+            
+            x=squeeze(x);
+            
+        end
+        
+        function x=get_freqs(obj)
+            
+            x=squeeze(obj.Frequencies);
+            
+        end
+        
+    end
 end
             
         
